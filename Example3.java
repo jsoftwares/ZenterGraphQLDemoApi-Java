@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Example3
 {
-    public static final String API_ENDPOINT = "https://zenter.ng/Api/V2ea1";
+    public static final String API_ENDPOINT = "https://app.zenter.ng/Api/V2ea1";
 
     public static final String API_USER = "484_test@useTestCredential.com";
     public static final String API_PASSPHRASE = "a774b3a81c25ca5d80d0ecdchContactsUs";
