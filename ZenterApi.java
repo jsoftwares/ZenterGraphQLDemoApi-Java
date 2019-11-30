@@ -50,7 +50,7 @@ public class ZenterApi
         return this.client.CreateRecipient(recipient.name,recipient.email);
     }
 
-    public Job CreateJob(String jobTitle, String jobSubject, String listTitle, ArrayList<Recipient> recipients)
+    public Job CreateJob(String jobTitle, String jobSubject, String listTitle, int senderId, ArrayList<Recipient> recipients)
     {
         Template template = this.client.FindTemplateByTitle("test1");
 

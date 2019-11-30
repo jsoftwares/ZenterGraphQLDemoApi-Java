@@ -21,7 +21,8 @@ public class Example2
         }
 
         int TemplateId = 20;
-        Job job = client.CreateEmailJob("Test","My subject", TemplateId);
+		int senderId = 3;
+        Job job = client.CreateEmailJob("Test","My subject", TemplateId, senderId);
 
         System.out.println(job.id);
         System.out.println("Success!");

@@ -1,6 +1,6 @@
-mutation($title: String!,$subject: String!, $templateId: Int!)
+mutation($title: String!,$subject: String!, $templateId: Int!, $senderId: Int!)
 {
-	CreateJob(title:$title, subject:$subject, templateId: $templateId)
+	CreateJob(title:$title, subject:$subject, templateId: $templateId, senderId: $senderId)
 	{
 		id
 		title

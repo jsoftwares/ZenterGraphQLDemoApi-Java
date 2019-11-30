@@ -221,7 +221,7 @@ public class GraphqlClient
     	public Job CreateJob;
     }
 
-    public Job CreateEmailJob(String title, String subject, int templateId)
+    public Job CreateEmailJob(String title, String subject, int templateId, int senderId)
     {
         GraphqlRequest q = new GraphqlRequest();
         q.query = readFile("ZenterApiQueries/CreateEmailJob.graphql");
@@ -229,6 +229,7 @@ public class GraphqlClient
         q.variables.put("title",title);
         q.variables.put("subject",subject);
         q.variables.put("templateId",templateId);
+        q.variables.put("senderId",senderId);
 
         GraphqlResponse<CreateJob> result = this.query(q, CreateJob.class);
 
@@ -274,6 +275,25 @@ public class GraphqlClient
 
         return result.data.template;
     }
+	
+	public class AddArticles
+	{
+		public Articles articles
+	}
+	
+	public Article AddArticlesToJob(Int jobId, String title, String description)
+	{
+		GraphqlRequest q = new GraphqlRequest();
+		q.query = readFile("ZenterApiQueries/AddArticlesToJob.graphql");
+		q.variables = new HashMap<String, String>();
+		q.variables.put("jobId", jobId);
+		q.variables.put("title", title);
+		q.variables.put("description", description);
+		
+		GraphqlResponse<AddArticles> result = this.query(q, AddArticles.class);
+		
+		return result.data.articles
+	}
 
 
     public class SendJob
