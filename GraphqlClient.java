@@ -281,7 +281,7 @@ public class GraphqlClient
 		public Articles articles
 	}
 	
-	public Article AddArticlesToJob(Int jobId, String title, String description)
+	public Article AddArticlesToJob(int jobId, String title, String description)
 	{
 		GraphqlRequest q = new GraphqlRequest();
 		q.query = readFile("ZenterApiQueries/AddArticlesToJob.graphql");
