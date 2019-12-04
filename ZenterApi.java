@@ -70,7 +70,7 @@ public class ZenterApi
 
     	this.client.AddRecipientsToList(list.id, recipientIds);
 
-    	Job job = this.client.CreateEmailJob(jobTitle, jobSubject, template.id);
+    	Job job = this.client.CreateEmailJob(jobTitle, jobSubject, template.id, senderId);
 
     	this.client.AddListToJob(list, job);
 
