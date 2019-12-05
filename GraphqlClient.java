@@ -281,12 +281,13 @@ public class GraphqlClient
 		public Articles articles
 	}
 	
-	public Article AddArticlesToJob(int jobId, String title, String description)
+	public Article AddArticlesToJob(int jobId, int number, String title, String description)
 	{
 		GraphqlRequest q = new GraphqlRequest();
 		q.query = readFile("ZenterApiQueries/AddArticlesToJob.graphql");
 		q.variables = new HashMap<String, String>();
 		q.variables.put("jobId", jobId);
+		q.variables.put("number", number);
 		q.variables.put("title", title);
 		q.variables.put("description", description);
 		
